@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Rethink sans, sans-serif;
+}
+body {
+  background-color: #ffffff7f;
+}
+
+footer {
+  background-color: #ffcb05;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  padding: 0.4rem 5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+footer .search {
+  position: relative;
+  display: flex;
+  left: 20%;
+  padding: 5px;
+}
+
+footer img {
+  width: 250px;
+  transition: 1s ease;
+}
+
+footer .search input {
+  padding: 10px 20px;
+  font-size: large;
+  border: 3px solid #2f6bb3;
+  color: #2f6bb3;
+  font-weight: bold;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 1s ease;
+}
+
+.search input:focus {
+  outline: transparent;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+footer .search button {
+  position: absolute;
+  left: 82%;
+  top: 25%;
+  z-index: 1;
+  background-color: transparent;
+  color: #2f6bb3;
+  border: none;
+  padding-left: 5px;
+  font-size: 30px;
+}
+
+.container {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 1rem;
+  margin: auto;
+  justify-content: center;
+  gap: 1rem;
+  transition: 1s ease;
+}
+
+@media (max-width: 780px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 1rem;
+    margin: auto;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  footer img {
+    width: 200px;
+  }
+  footer .search {
+    position: relative;
+    display: flex;
+    left: 15%;
+    padding: 3px;
+  }
+  footer .search input {
+    padding: 5px 10px;
+    width: 230px;
+    font-size: large;
+    border: 3px solid #2f6bb3;
+    color: #2f6bb3;
+    font-weight: bold;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.364) 0px 1px 3px -1px;
+    transition: 0.4s ease;
+  }
+  footer .search button {
+    position: absolute;
+    left: 85%;
+    top: 23%;
+    z-index: 1;
+    background-color: transparent;
+    color: #2f6bb3;
+    border: none;
+    padding-left: 5px;
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 1rem;
+    margin: auto;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.poke-card {
+  text-align: center;
+  background-color: white;
+  margin: 10px;
+  height: 350px;
+  min-width: 280px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  position: relative;
+  transition: 0.5s ease;
+}
+
+.poke-card:hover img {
+  transform: scale(1.2);
+}
+
+.poke-card:hover {
+  transform: scale(1.05);
+}
+
+.poke-card span {
+  position: absolute;
+  border-radius: 10px;
+  right: 0%;
+  top: 0%;
+  background-color: #ffcb05;
+  padding: 5px 5px 15px 15px;
+  border-bottom-left-radius: 140%;
+  color: #fff;
+  font-weight: bold;
+}
+.poke-card img {
+  height: 180px;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s ease;
+}
+
+.poke-card .info {
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  top: 35%;
+  right: 0;
+  left: 0;
+  padding-top: 30px;
+  color: white;
+}
+.info h2::first-letter {
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+#my-chart .bar {
+  padding-top: 15px;
+  --labels-size: 10px;
+  color: black;
+  font-weight: 500;
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+#my-chart .bar td {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.poke-card:hover #my-chart table tbody td {
+  transform-origin: left;
+  animation: revealing-bars 2s ease;
+}
+@keyframes revealing-bars {
+  0% {
+    transform: scaleX(0);
+  }
+  30% {
+    transform: scaleX(1);
+  }
+}
